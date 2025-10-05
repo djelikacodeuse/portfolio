@@ -1,0 +1,225 @@
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"> 
+    <title>Portfolio - T_Djel</title>
+
+    <!-- Importation de la police Poppins depuis Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================== Reset des marges et padding ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+        }
+
+        /* ==================== Style du body ==================== */
+        body {
+            font-family: 'Poppins', sans-serif; /* Police moderne */
+            background-color: #0a0a0a; /* Fond sombre */
+            color: bisque; /* Texte clair pour contraste */
+            scroll-behavior: smooth; /* Défilement fluide */
+        }
+
+        /* ==================== Navbar ==================== */
+        .navbar {
+            position: fixed; /* Navbar toujours visible */
+            top: 20px;
+            right: 50px;
+            background: rgba(255, 228, 196, 0.9); /* Couleur bisque semi-transparente */
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Toujours devant */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Ombre subtile */
+            transition: all 0.3s ease; /* Animation au hover */
+        }
+
+        .navbar:hover {
+            transform: scale(1.05); /* Légère augmentation au survol */
+        }
+
+        .nav-links {
+            display: flex; /* Menu horizontal */
+            gap: 40px; /* Espacement entre les liens */
+            list-style: none; /* Supprimer les puces */
+        }
+
+        .nav-links a {
+            color: #291010; /* Couleur texte des liens */
+            text-decoration: none; /* Supprimer le soulignement */
+            font-weight: 600; /* Texte plus épais */
+            padding: 8px 15px; /* Espace autour du texte */
+            border-radius: 10px;
+            transition: 0.3s ease; /* Animation hover */
+        }
+
+        .nav-links a:hover {
+            background: #291010; /* Fond sombre au hover */
+            color: bisque; /* Texte clair au hover */
+        }
+
+        /* ==================== Section Accueil ==================== */
+        .sec-acceuil {
+            display: flex; /* Centrer le contenu */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Pleine hauteur de l'écran */
+            text-align: center;
+            background: linear-gradient(120deg, #0a0a0a 0%, #1c1c1c 100%); /* Dégradé sombre */
+            animation: fadeIn 2s ease forwards; /* Animation d'apparition */
+        }
+
+        .sec-acceuil h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: slideUp 1s ease forwards; /* Animation slide vers le haut */
+        }
+
+        .sec-acceuil h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 300;
+            animation: slideUp 1.5s ease forwards;
+        }
+
+        .sec-acceuil p {
+            font-size: 1.2em;
+            animation: slideUp 2s ease forwards;
+        }
+
+        /* ==================== Section À propos ==================== */
+        .about {
+            padding: 100px 20px;
+            background-color: #0a0a0a;
+            color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .about-content {
+            max-width: 800px;
+            text-align: center;
+            animation: slideInLeft 1s ease forwards;
+        }
+
+        .about-content h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .about-content h3 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            color: #f0c080; /* Accent couleur dorée */
+        }
+
+        .about-content p {
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: bisque;
+            color: #0a0a0a;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #f0c080; /* Couleur au hover */
+            transform: scale(1.1); /* Agrandissement au hover */
+        }
+
+        /* ==================== Animations ==================== */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* ==================== Responsive pour mobile ==================== */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                right: 10px;
+                padding: 8px 15px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .sec-acceuil h1 {
+                font-size: 2em;
+            }
+
+            .sec-acceuil h2 {
+                font-size: 1.2em;
+            }
+
+            .about-content h2 {
+                font-size: 1.5em;
+            }
+
+            .about-content h3 {
+                font-size: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ==================== Navbar ==================== -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#acceuil">Accueil</a></li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#realisation">Réalisations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== Section Accueil ==================== -->
+    <section id="acceuil" class="sec-acceuil">
+        <h1>Moi c'est TRAORE Djelika</h1>
+        <h2>Étudiante en licence d'informatique / développeuse web et mobile</h2>
+        <p>Je transforme des idées en solutions digitales</p>
+    </section>
+
+    <!-- ==================== Section À propos ==================== -->
+    <section id="a-propos" class="about">
+        <div class="about-content">
+            <h2>À propos de moi</h2>
+            <h3>Étudiante en informatique</h3>
+            <p>Je me présente au nom de <strong>Djelika TRAORE</strong>, passionnée par la technologie et le web design. J'aime créer des sites modernes, élégants et fonctionnels. Mon objectif est de développer des interfaces intuitives et d'améliorer mes compétences en développement web.</p>
+            <p>Mes compétences : HTML, CSS, JavaScript, Bootstrap, Python et un peu de Photoshop.</p>
+            <a href="#mes-projets" class="btn">Voir mes projets</a>
+        </div>
+    </section>
+
+</body>
+</html>
